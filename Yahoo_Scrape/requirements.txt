@@ -9,6 +9,4 @@ webdriver-manager
 jupyter
 ipykernel
 matplotlib
-pytesseract
-opencv-python
 seaborn

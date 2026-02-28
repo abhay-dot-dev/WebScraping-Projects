@@ -1,72 +1,103 @@
-Got it 👍 — only the **scraping projects**, no data analysis details.
-
-Here is your cleaned and updated **README.md**:
-
----
-
 # 🕷 Web Scraping Projects
 
-This repository contains web scraping projects built using Python and Selenium to extract structured data from real-world websites.
+This repository contains real-world web scraping projects built using Python and Selenium to extract structured data from dynamic websites.
+
+Each project demonstrates:
+- Browser automation
+- Handling dynamic content
+- Data cleaning and transformation
+- Structured data export
 
 ---
 
-## 📌 Projects
+# 📌 Projects
 
 ---
 
 ## 1️⃣ Nykaa Scraper
 
-This project automates data extraction from **Nykaa.com** based on the search query *"korean skin care"*.
+Automates product data extraction from **Nykaa.com** using the search query *"korean skin care"*.
 
-### 🔍 What This Project Does
+### 🔍 Features
 
-* Uses **Selenium WebDriver** to automate browser interaction
-* Searches for products using a keyword
-* Extracts product details including:
+- Uses Selenium WebDriver for automation
+- Searches products using a keyword
+- Extracts:
+  - Product Name
+  - Price
+  - Review Count
+- Handles dynamic content using the **"Load More"** button
+- Exports data into CSV format
 
-  * Product Name
-  * Price
-  * Review Count
-* Handles dynamic content loading using the **"Load More"** button
-* Collects data across multiple product listings
-* Stores the scraped data into a structured CSV file
-
-👉 [Open Nykaa Scrape Project](./Nykaa_Scrape)
+👉 `./Nykaa_Scrape`
 
 ---
 
 ## 2️⃣ Yahoo Finance Scraper
 
-This project scrapes stock market data from **Yahoo Finance – Most Active Stocks** section.
+Scrapes stock data from **Yahoo Finance – Most Active Stocks** section.
+
+### 🔍 Features
+
+- Uses Selenium with explicit waits
+- Handles dynamic page loading
+- Extracts:
+  - Stock Symbol
+  - Company Name
+  - Current Price
+  - Price Change
+  - Trading Volume
+  - Market Capitalization
+  - P/E Ratio
+- Handles pagination
+- Cleans and formats data
+- Exports structured CSV file
+
+👉 `./Yahoo_Scrape`
+
+---
+
+## 3️⃣ 99acres Chennai Property Scraper 🏠
+
+This project scrapes real estate listings from **99acres.com** (Chennai properties).
 
 ### 🔍 What This Project Does
 
-* Uses **Selenium with explicit waits** to handle dynamic pages
-* Navigates through Yahoo Finance stock sections automatically
-* Extracts stock information including:
+- Uses Selenium to:
+  - Navigate listing pages
+  - Handle pagination
+  - Extract property cards dynamically
 
-  * Stock Symbol
-  * Company Name
-  * Current Price
-  * Price Change
-  * Trading Volume
-  * Market Capitalization
-  * P/E Ratio
-* Handles pagination to scrape data from multiple pages
-* Cleans and formats extracted data
-* Exports the final dataset into a CSV file
-
-👉 [Open Yahoo Scrape Project](./Yahoo_Scrape)
+- Extracts:
+  - Property Name
+  - Location
+  - Price
+  - Area (sqft)
+  - BHK
+  - Starred listing indicator
 
 ---
 
-## 🛠 Technologies Used
+### 🧹 Data Cleaning & Feature Engineering
 
-* Python
-* Selenium
-* BeautifulSoup
-* Requests
-* Pandas
-* NumPy
+After scraping, the dataset is processed using Pandas:
+
+- Removed duplicates
+- Trimmed and standardized text (lowercase, strip spaces)
+- Extracted numeric price values:
+  - Converted Crore → Lakhs
+- Converted:
+  - Area → numeric sqft
+  - BHK → numeric
+- Removed unnecessary text like:
+  - "chennai"
+  - commas
+  - special characters
+- Created new feature:
+  - `is_starred` (1 if featured listing, else 0)
 
 ---
+
+### 📊 Final Output
+
+The cleaned dataset is exported to:

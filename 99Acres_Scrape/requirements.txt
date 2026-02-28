@@ -1,0 +1,13 @@
+pandas
+numpy
+requests
+beautifulsoup4
+lxml
+html5lib
+selenium
+webdriver-manager
+jupyter
+ipykernel
+matplotlib
+seaborn
+openpyxl

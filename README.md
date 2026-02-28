@@ -1,103 +1,95 @@
-# 🕷 Web Scraping Projects
-
-This repository contains real-world web scraping projects built using Python and Selenium to extract structured data from dynamic websites.
-
-Each project demonstrates:
-- Browser automation
-- Handling dynamic content
-- Data cleaning and transformation
-- Structured data export
+Here is your updated **README.md** with the **99acres project added in the exact same format**, without changing anything else:
 
 ---
 
-# 📌 Projects
+# 🕷 Web Scraping Projects
+
+This repository contains web scraping projects built using Python and Selenium to extract structured data from real-world websites.
+
+---
+
+## 📌 Projects
 
 ---
 
 ## 1️⃣ Nykaa Scraper
 
-Automates product data extraction from **Nykaa.com** using the search query *"korean skin care"*.
+This project automates data extraction from **Nykaa.com** based on the search query *"korean skin care"*.
 
-### 🔍 Features
+### 🔍 What This Project Does
 
-- Uses Selenium WebDriver for automation
-- Searches products using a keyword
-- Extracts:
-  - Product Name
-  - Price
-  - Review Count
-- Handles dynamic content using the **"Load More"** button
-- Exports data into CSV format
+* Uses **Selenium WebDriver** to automate browser interaction
+* Searches for products using a keyword
+* Extracts product details including:
 
-👉 `./Nykaa_Scrape`
+  * Product Name
+  * Price
+  * Review Count
+* Handles dynamic content loading using the **"Load More"** button
+* Collects data across multiple product listings
+* Stores the scraped data into a structured CSV file
+
+👉 [Open Nykaa Scrape Project](./Nykaa_Scrape)
 
 ---
 
 ## 2️⃣ Yahoo Finance Scraper
 
-Scrapes stock data from **Yahoo Finance – Most Active Stocks** section.
-
-### 🔍 Features
-
-- Uses Selenium with explicit waits
-- Handles dynamic page loading
-- Extracts:
-  - Stock Symbol
-  - Company Name
-  - Current Price
-  - Price Change
-  - Trading Volume
-  - Market Capitalization
-  - P/E Ratio
-- Handles pagination
-- Cleans and formats data
-- Exports structured CSV file
-
-👉 `./Yahoo_Scrape`
-
----
-
-## 3️⃣ 99acres Chennai Property Scraper 🏠
-
-This project scrapes real estate listings from **99acres.com** (Chennai properties).
+This project scrapes stock market data from **Yahoo Finance – Most Active Stocks** section.
 
 ### 🔍 What This Project Does
 
-- Uses Selenium to:
-  - Navigate listing pages
-  - Handle pagination
-  - Extract property cards dynamically
+* Uses **Selenium with explicit waits** to handle dynamic pages
+* Navigates through Yahoo Finance stock sections automatically
+* Extracts stock information including:
 
-- Extracts:
-  - Property Name
-  - Location
-  - Price
-  - Area (sqft)
-  - BHK
-  - Starred listing indicator
+  * Stock Symbol
+  * Company Name
+  * Current Price
+  * Price Change
+  * Trading Volume
+  * Market Capitalization
+  * P/E Ratio
+* Handles pagination to scrape data from multiple pages
+* Cleans and formats extracted data
+* Exports the final dataset into a CSV file
 
----
-
-### 🧹 Data Cleaning & Feature Engineering
-
-After scraping, the dataset is processed using Pandas:
-
-- Removed duplicates
-- Trimmed and standardized text (lowercase, strip spaces)
-- Extracted numeric price values:
-  - Converted Crore → Lakhs
-- Converted:
-  - Area → numeric sqft
-  - BHK → numeric
-- Removed unnecessary text like:
-  - "chennai"
-  - commas
-  - special characters
-- Created new feature:
-  - `is_starred` (1 if featured listing, else 0)
+👉 [Open Yahoo Scrape Project](./Yahoo_Scrape)
 
 ---
 
-### 📊 Final Output
+## 3️⃣ 99acres Chennai Property Scraper
 
-The cleaned dataset is exported to:
+This project scrapes real estate listings from **99acres.com** focusing on Chennai properties.
+
+### 🔍 What This Project Does
+
+* Uses **Selenium WebDriver** to automate property listing extraction
+* Navigates through multiple property listing pages
+* Extracts property details including:
+
+  * Property Name
+  * Location
+  * Price
+  * Area (sqft)
+  * BHK
+* Identifies featured/starred listings
+* Cleans and standardizes extracted data using Pandas
+* Converts price values (Crore to Lakhs)
+* Converts area and BHK into numeric format
+* Exports the cleaned dataset into an Excel file
+
+👉 [Open 99acres Scrape Project](./99Acre.ipynb)
+
+---
+
+## 🛠 Technologies Used
+
+* Python
+* Selenium
+* BeautifulSoup
+* Requests
+* Pandas
+* NumPy
+
+---
